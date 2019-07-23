@@ -2,11 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button } from 'antd';
+import Hello from './components/Hello';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -17,9 +18,11 @@ const App: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-        <Button type="primary">Button</Button>
+
         </a>
-      </header>
+      </header> */}
+      <Hello name="TypeScript" enthusiasmLevel={10} />,
+      <Button type="primary">Button</Button>
     </div>
   );
 }
