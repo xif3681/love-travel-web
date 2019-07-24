@@ -1,4 +1,4 @@
-import { ActionInterface, CreateStoreFunction, EnhancerFunction, ReducerFunction } from '@/tsTypes';
+import { ActionInterface, CreateStoreFunction, EnhancerFunction, ReducerFunction } from '../../tsTypes';
 import { combineReducers } from 'redux';
 
 const RESET_ACTION_TYPE = '@@RESET';

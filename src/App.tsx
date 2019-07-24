@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import { Button } from 'antd';
-import Hello from './components/Hello';
+// import Hello from './components/Hello/Hello';
 
 const App: React.FC = () => {
   return (
@@ -21,7 +21,7 @@ const App: React.FC = () => {
 
         </a>
       </header> */}
-      <Hello name="TypeScript" enthusiasmLevel={10} />,
+      {/* <Hello name="TypeScript" enthusiasmLevel={10} />, */}
       <Button type="primary">Button</Button>
     </div>
   );

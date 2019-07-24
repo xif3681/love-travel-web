@@ -2,7 +2,7 @@
 // import { reducer as datasets } from '@/datasets'
 // import { reducer as reports } from '@/reports'
 
-import { reducer as common } from '@/common'
+import { reducer as common } from '@/common/store'
 
 export default {
   // datasources,

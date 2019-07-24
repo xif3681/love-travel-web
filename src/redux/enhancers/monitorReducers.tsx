@@ -1,4 +1,4 @@
-import { CreateStoreFunction, EnhancerFunction, ReducerFunction } from '@/tsTypes';
+import { CreateStoreFunction, EnhancerFunction, ReducerFunction } from '../../tsTypes';
 
 const round = (n: number) => Math.round(n * 100) / 100;
 
