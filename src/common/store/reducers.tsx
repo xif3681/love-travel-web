@@ -2,12 +2,10 @@ import { handleActions } from "redux-actions"
 import { CommonActions } from "./actionTypes"
 import { combineReducers } from "redux"
 import { getCookie } from "@/utils/cookie"
-
-import { IUser } from "@/interface/management"
-import { TokenInfo, AccessInfo, LoadStatus } from '@/interface/common'
+import { TokenInfo, AccessInfo, LoadStatus, UserInfo } from '@/interface/common'
 
 interface CommonReducer {
-  userInfo: IUser
+  userInfo: UserInfo
   tokenInfo: TokenInfo
   accessInfo: AccessInfo
 }

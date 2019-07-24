@@ -1,6 +1,5 @@
 import Request from './request'
-import { PageEnum } from '../interface/common'
-import { IUser } from '../interface/management';
+import { PageEnum, UserInfo } from 'src/interface/common'
 
 // 通用登陆接口
 export const login = (username:string, password: string) => Request.post('/user/login', { username, password })
@@ -14,6 +13,7 @@ export const pagodaLogin = (params: { ticket: string }): Promise<{userId: string
 
 // 获取当前用户的部分信息
 export const loadUserCurrent = () => Request.get('/user/current')
-
 // 获取当前用户信息 & 用户权限
-export const loadUserInfoMixedAccess = (): Promise<{ current: IUser, permissions: { pagePermissions: PageEnum[] } }> => Request.get(`/user/currentMix`)
+export const loadUserInfoMixedAccess = (): Promise<{ current: UserInfo, permissions: { pagePermissions: PageEnum[] } }> => Request.get(`/user/currentMix`)
+
+

@@ -1,4 +1,4 @@
-import { PageEnum, AccessInfo, TokenInfo } from './index'
+import { PageEnum, AccessInfo, TokenInfo } from './common'
 
 export interface PrivateRouteProps {
   keys?: PageEnum[] | PageEnum // key && access 共同确定页面是否有权限
