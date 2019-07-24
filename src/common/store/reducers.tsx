@@ -1,6 +1,6 @@
+import { combineReducers } from "redux"
 import { handleActions } from "redux-actions"
 import { CommonActions } from "./actionTypes"
-import { combineReducers } from "redux"
 import { getCookie } from "@/utils/cookie"
 import { TokenInfo, AccessInfo, LoadStatus, UserInfo } from '@/interface/common'
 

@@ -1,30 +1,41 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
-import { Button } from 'antd';
-// import Hello from './components/Hello/Hello';
-
+import { BrowserRouter, NavLink, Redirect, Route, Switch, Router } from 'react-router-dom'
+import { LocaleProvider } from 'antd'
+import zhCN from 'antd/lib/locale-provider/zh_CN'
+import { routes } from '@/routers/RouteConfig'
 const App: React.FC = () => {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
 
-        </a>
-      </header> */}
-      {/* <Hello name="TypeScript" enthusiasmLevel={10} />, */}
-      <Button type="primary">Button</Button>
+
+      <BrowserRouter>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/host">host</NavLink>
+            </li>
+            <li>
+              <NavLink to="/rooms">rooms</NavLink>
+            </li>
+          </ul>
+        </nav>
+        {routes.map((route, i) => <Route key={i} path={route.path} component={route.component} exact={route.exact}/>)}
+        {/* <LocaleProvider locale={zhCN}>
+          <Switch>
+            <Redirect exact={true} from='/' to='home' />
+            {routes.map((route, i) => <Route key={i} path={route.path} component={route.component} />)}
+          </Switch>
+        </LocaleProvider> */}
+      </BrowserRouter>
+
     </div>
+
   );
 }
 
 export default App;
+

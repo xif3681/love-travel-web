@@ -25,7 +25,7 @@
         "allow-trailing-underscore",
         "allow-pascal-case"
       ]
-    } // 变量命名
+    }
   },
   "jsRules": {
     "object-literal-sort-keys": false
