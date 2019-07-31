@@ -1,9 +1,9 @@
 import axios, { AxiosError, AxiosResponse, AxiosRequestConfig } from 'axios';
 import * as React from 'react'
 import { message, notification } from 'antd';
-import ErrorDescription from 'src/common/components/Errors/ErrorDescription'
-import ErrorListDescription from 'src/common/components/Errors/ErrorListDescription'
-import ErrorListWithoutInteraction from 'src/common/components/Errors/ErrorListWithoutInteraction'
+import ErrorDescription from 'src/components/Errors/ErrorDescription'
+import ErrorListDescription from 'src/components/Errors/ErrorListDescription'
+import ErrorListWithoutInteraction from 'src/components/Errors/ErrorListWithoutInteraction'
 
 import { getCookie } from '@/utils/cookie'
 import { navigationToPagoda } from '@/utils/navigator'

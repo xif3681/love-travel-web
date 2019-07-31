@@ -6,7 +6,7 @@ import * as Service from '@/services/auth'
 
 import { setCookie } from '@/utils/cookie'
 
-import { CommonActions } from "@/common/store/actionTypes"
+import { CommonActions } from "./actionTypes"
 import { UserInfo } from "@/interface/common"
 import { GlobalState } from "@/interface/state"
 

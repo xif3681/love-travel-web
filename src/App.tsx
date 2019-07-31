@@ -21,6 +21,9 @@ const App: React.FC = () => {
             <li>
               <NavLink to="/rooms">rooms</NavLink>
             </li>
+            <li>
+              <NavLink to="/login">login</NavLink>
+            </li>
           </ul>
         </nav>
         {routes.map((route, i) => <Route key={i} path={route.path} component={route.component} exact={route.exact}/>)}
