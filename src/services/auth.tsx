@@ -1,5 +1,5 @@
 import Request from './request'
-import { PageEnum, UserInfo } from 'src/interface/common'
+import { PageEnum, UserInfo } from 'src/interface/user'
 
 // 通用登陆接口
 export const login = (username:string, password: string) => Request.post('/user/login', { username, password })

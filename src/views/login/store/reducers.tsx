@@ -2,15 +2,15 @@ import { combineReducers } from "redux"
 import { handleActions } from "redux-actions"
 import { CommonActions } from "./actionTypes"
 import { getCookie } from "@/utils/cookie"
-import { TokenInfo, AccessInfo, LoadStatus, UserInfo } from '@/interface/common'
+import { TokenInfo, AccessInfo, LoadStatus, UserInfo } from 'src/interface/user'
 
-interface CommonReducer {
+interface UserReducer {
   userInfo: UserInfo
   tokenInfo: TokenInfo
   accessInfo: AccessInfo
 }
 
-export const initReducer: CommonReducer = {
+export const initReducer: UserReducer = {
   userInfo: {
     id: '',
     username: '',

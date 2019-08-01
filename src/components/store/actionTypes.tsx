@@ -1,0 +1,4 @@
+export const ActionTypes = {
+  MENUSCURRENT: '@@COMMON/TABCURRENT',
+  FOOTERLIST: '@@COMMON/MENUSCURRENT'
+}

@@ -93,7 +93,7 @@ module.exports = {
               options: {
                 modifyVars: {
                   '@icon-url': `"${path.relative('./node_modules/antd/es/style/core', './src/assets/fonts/iconfont')}"`, // relative to ant design iconfont path 「node_modules/antd/es/style/core」
-                  '@primary-color': '#03B485',
+                  '@primary-color': '#00acc1',
                   '@link-color': '#1890ff',
                 },
                 javascriptEnabled: true

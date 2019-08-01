@@ -2,13 +2,18 @@
 // import { reducer as datasets } from '@/datasets'
 // import { reducer as reports } from '@/reports'
 
-import { reducer as common } from '@/views/login/store'
+
+import { reducer as common } from 'src/components/store'
+import { reducer as user } from '@/views/login/store'
 import { reducer as home } from '@/views/home/store'
-import { HomeReducer} from "@/interface/views"
+import { Home } from "src/interface/home"
+import { Common } from "@/interface/common"
 
 export interface StoreState {
-  common: Object,
-  home: HomeReducer
+  common: Common,
+  user: Object,
+  home: Home,
+
 }
 
 export default {
@@ -16,5 +21,7 @@ export default {
   // datasets,
   // reports,
   common,
-  home
+  user,
+  home,
+
 }

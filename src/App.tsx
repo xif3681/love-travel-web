@@ -4,6 +4,7 @@ import { BrowserRouter, NavLink, Redirect, Route, Switch, Router } from 'react-r
 import { LocaleProvider } from 'antd'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
 import { routes } from '@/routers/RouteConfig'
+import Menus from '@/components/menus'
 const App: React.FC = () => {
   return (
     <div className="App">
@@ -26,6 +27,7 @@ const App: React.FC = () => {
             </li>
           </ul>
         </nav>
+        <Menus />
         {routes.map((route, i) => <Route key={i} path={route.path} component={route.component} exact={route.exact}/>)}
         {/* <LocaleProvider locale={zhCN}>
           <Switch>
