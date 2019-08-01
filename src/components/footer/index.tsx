@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { MapStateToPropsParam, MapDispatchToPropsParam, connect } from 'react-redux';
 import { DispatchFunction } from '@/tsTypes'
-import { Button, Menu, Icon } from 'antd';
 import * as FooterActions from "../store/actions"
 import { StoreState } from 'src/redux/rootReducer'
-const { SubMenu } = Menu;
 import {FooterList} from '@/interface/common/footer';
+import './style.scss'
 
 interface StateProps {
   footerList: FooterList
@@ -42,7 +41,8 @@ class Footer extends Component<StateProps & DispatchProps & OwnProps, OwnState> 
   render() {
     return (
       < div >
-        <a href="">this.props.footerList</a>
+        <hr/>
+        <div className="foot-text">2019 © 联系方式</div>
       </div >
 
     )

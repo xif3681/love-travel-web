@@ -4,14 +4,15 @@ import { BrowserRouter, NavLink, Redirect, Route, Switch, Router } from 'react-r
 import { LocaleProvider } from 'antd'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
 import { routes } from '@/routers/RouteConfig'
-import Menus from '@/components/menus'
+import Footer from '@/components/Footer'
+
 const App: React.FC = () => {
   return (
     <div className="App">
 
 
       <BrowserRouter>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <NavLink to="/">Home</NavLink>
@@ -26,9 +27,10 @@ const App: React.FC = () => {
               <NavLink to="/login">login</NavLink>
             </li>
           </ul>
-        </nav>
-        <Menus />
+        </nav> */}
+       
         {routes.map((route, i) => <Route key={i} path={route.path} component={route.component} exact={route.exact}/>)}
+        <Footer />
         {/* <LocaleProvider locale={zhCN}>
           <Switch>
             <Redirect exact={true} from='/' to='home' />

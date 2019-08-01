@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { MapStateToPropsParam, MapDispatchToPropsParam, connect } from 'react-redux';
 import { DispatchFunction } from '@/tsTypes'
-import { Button, Menu, Icon } from 'antd';
+import {  Menu, Icon } from 'antd';
 import * as MenusActions from "../store/actions"
 import { StoreState } from 'src/redux/rootReducer'
+import './style.scss'
 const { SubMenu } = Menu;
 
 interface StateProps {
@@ -40,8 +41,8 @@ class Menus extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
   }
   render() {
     return (
-      < div >
-        <Menu onClick={this.props.handleClick} selectedKeys={[this.props.current]} mode="horizontal">
+      < div className="position-ab">
+        <Menu onClick={this.props.handleClick} selectedKeys={[this.props.current]} mode="horizontal" >
           <Menu.Item key="home">
             <Icon type="home" theme="twoTone" twoToneColor="#52c41a" />
             首页
