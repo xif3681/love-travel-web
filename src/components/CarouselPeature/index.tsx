@@ -5,7 +5,7 @@ import { Carousel } from 'antd';
 import * as MenusActions from "../store/actions"
 import { StoreState } from 'src/redux/rootReducer'
 import Menus from 'src/components/Menus'
-import './style.scss'
+import 'src/components/style.scss'
 
 
 interface PictureList {
@@ -49,6 +49,7 @@ class CarouselPeature extends Component<StateProps & DispatchProps & OwnProps, O
   }
   render() {
     return (
+      <div className="CarouselPeature">
       < div className="position-re">
         <Menus />
         <Carousel autoplay speed={1000}>
@@ -67,6 +68,8 @@ class CarouselPeature extends Component<StateProps & DispatchProps & OwnProps, O
         
 
       </div >
+      </div>
+
 
     )
 

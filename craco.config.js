@@ -40,16 +40,16 @@ module.exports = {
             maxInitialRequests: Infinity,
             minSize: 100000,
             minChunks: 1,
-            cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name(module, chunks, chcheGroupKey) {
-                        const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
-                        return `vendor.${packageName.replace('@', '')}`
-                    },
-                    reuseExistingChunk: true
-                },
-            }
+            // cacheGroups: {
+            //     vendor: {
+            //         test: /[\\/]node_modules[\\/]/,
+            //         name(module, chunks, chcheGroupKey) {
+            //             const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
+            //             return `vendor.${packageName.replace('@', '')}`
+            //         },
+            //         reuseExistingChunk: true
+            //     },
+            // }
         }
       },
       devtool: process.env.NODE_ENV === 'production' ? false : 'cheap-module-eval-source-map' // cheap-module-source-map

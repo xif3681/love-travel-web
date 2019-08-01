@@ -4,7 +4,7 @@ import { DispatchFunction } from '@/tsTypes'
 import {  Menu, Icon } from 'antd';
 import * as MenusActions from "../store/actions"
 import { StoreState } from 'src/redux/rootReducer'
-import './style.scss'
+import 'src/components/style.scss'
 const { SubMenu } = Menu;
 
 interface StateProps {
@@ -41,6 +41,7 @@ class Menus extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
   }
   render() {
     return (
+      <div className="Menus">
       < div className="position-ab">
         <Menu onClick={this.props.handleClick} selectedKeys={[this.props.current]} mode="horizontal" >
           <Menu.Item key="home">
@@ -131,6 +132,8 @@ class Menus extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
           </SubMenu>
         </Menu>
       </div >
+      </div>
+     
 
     )
 

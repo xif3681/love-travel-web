@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { MapStateToPropsParam, MapDispatchToPropsParam, connect } from 'react-redux';
 import { DispatchFunction } from '@/tsTypes'
-import { Button ,Icon  } from 'antd';
 import * as HomeActions from "./store/actions"
 import { StoreState } from 'src/redux/rootReducer'
 import CarouselPeature from 'src/components/CarouselPeature';

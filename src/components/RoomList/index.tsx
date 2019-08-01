@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { MapStateToPropsParam, MapDispatchToPropsParam, connect } from 'react-redux';
-import { BrowserRouter, NavLink, Redirect, Route, Switch, Router } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 import { DispatchFunction } from '@/tsTypes'
 import { Card, Col, Row } from 'antd';
 import * as MenusActions from "../store/actions"
 import { StoreState } from 'src/redux/rootReducer'
-import './style.scss'
+import 'src/components/style.scss'
 const { Meta } = Card;
 
 interface RoomInfoList {
@@ -61,7 +61,7 @@ class RoomList extends Component<StateProps & DispatchProps & OwnProps, OwnState
   }
   render() {
     return (
-      <div style={{  padding: '30px' }}>
+      <div style={{  padding: '30px' }} className="RoomList">
         <h2 className="classfy-title">{this.props.title}</h2>
         <div >{this.props.subTitle}</div>
         <Row gutter={16} >

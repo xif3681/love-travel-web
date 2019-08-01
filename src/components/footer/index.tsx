@@ -4,7 +4,7 @@ import { DispatchFunction } from '@/tsTypes'
 import * as FooterActions from "../store/actions"
 import { StoreState } from 'src/redux/rootReducer'
 import {FooterList} from '@/interface/common/footer';
-import './style.scss'
+import 'src/components/style.scss'
 
 interface StateProps {
   footerList: FooterList
@@ -40,7 +40,7 @@ class Footer extends Component<StateProps & DispatchProps & OwnProps, OwnState> 
   }
   render() {
     return (
-      < div >
+      < div className="Footer">
         <hr/>
         <div className="foot-text">2019 © 联系方式</div>
       </div >

@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, NavLink, Redirect, Route, Switch, Router } from 'react-router-dom'
-import { LocaleProvider } from 'antd'
-import zhCN from 'antd/lib/locale-provider/zh_CN'
+// import { BrowserRouter, NavLink, Redirect, Route, Switch, Router } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
+// import { LocaleProvider } from 'antd'
+// import zhCN from 'antd/lib/locale-provider/zh_CN'
 import { routes } from '@/routers/RouteConfig'
 import Footer from '@/components/Footer'
 
