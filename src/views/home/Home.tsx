@@ -5,6 +5,7 @@ import * as HomeActions from "./store/actions"
 import { StoreState } from 'src/redux/rootReducer'
 import CarouselPeature from 'src/components/CarouselPeature';
 import RoomList from 'src/components/RoomList';
+import './home.scss'
 
 
 
@@ -48,10 +49,10 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
 
   }
   public pictureList = [
-    { src: '/static/media/白云先生冬季系列.jpeg' },
-    { src: '/static/media/小夜人系列.jpeg' },
-    { src: '/static/media/毕奇系列.jpeg' },
-    { src: '/static/media/仙人掌系列.jpeg' },
+    { src: require('src/assets/images/白云先生冬季系列.jpeg')},
+    { src: require('src/assets/images/小夜人系列.jpeg' )},
+    { src: require('src/assets/images/毕奇系列.jpeg' )},
+    { src: require('src/assets/images/仙人掌系列.jpeg') },
   ];
   public overLook = {
     title: '最近浏览过的',
@@ -69,7 +70,7 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
         preferPrice: 2600,
         assessRank: 9.6,
         assessNum: 2,
-        image: '/static/media/白云先生冬季系列.jpeg'
+        image: require('src/assets/images/白云先生冬季系列.jpeg')
       },
       {
         type: '整套公寓',
@@ -79,7 +80,7 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
         preferPrice: 0,
         assessRank: 9.6,
         assessNum: 2,
-        image: '/static/media/小夜人系列.jpeg'
+        image: require('src/assets/images/小夜人系列.jpeg')
       },
       {
         type: '整套公寓',
@@ -89,7 +90,7 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
         preferPrice: 0,
         assessRank: 9.6,
         assessNum: 2,
-        image: '/static/media/毕奇系列.jpeg'
+        image: require('src/assets/images/毕奇系列.jpeg')
       }
     ]
   }
@@ -109,7 +110,7 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
         preferPrice: 2600,
         assessRank: 9.6,
         assessNum: 2,
-        image: '/static/media/白云先生冬季系列.jpeg'
+        image: require('src/assets/images/白云先生冬季系列.jpeg')
       },
       {
         type: '整套公寓',
@@ -119,7 +120,7 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
         preferPrice: 0,
         assessRank: 9.6,
         assessNum: 2,
-        image: '/static/media/小夜人系列.jpeg'
+        image: require('src/assets/images/小夜人系列.jpeg')
       },
       {
         type: '整套公寓',
@@ -129,7 +130,7 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
         preferPrice: 0,
         assessRank: 9.6,
         assessNum: 2,
-        image: '/static/media/毕奇系列.jpeg'
+        image: require('src/assets/images/毕奇系列.jpeg')
       },
       {
         type: '整套公寓',
@@ -139,7 +140,7 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
         preferPrice: 0,
         assessRank: 9.6,
         assessNum: 2,
-        image: '/static/media/小夜人系列.jpeg'
+        image: require('src/assets/images/小夜人系列.jpeg')
       },
       {
         type: '整套公寓',
@@ -149,7 +150,7 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
         preferPrice: 0,
         assessRank: 9.6,
         assessNum: 2,
-        image: '/static/media/毕奇系列.jpeg'
+        image: require('src/assets/images/毕奇系列.jpeg')
       },
       {
         type: '整套公寓',
@@ -159,7 +160,7 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
         preferPrice: 0,
         assessRank: 9.6,
         assessNum: 2,
-        image: '/static/media/小夜人系列.jpeg'
+        image: require('src/assets/images/小夜人系列.jpeg')
       },
 
     ]
@@ -177,15 +178,19 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
 
   render() {
     return (
-      <div>
+      <div className="Home">
       <CarouselPeature pictureList={this.pictureList}></CarouselPeature>
      
       {/* <Button type="primary" onClick={() => this.props.increment()}>+</Button>
       <span>{this.props.count}</span>
       <Button type="primary" onClick={() => this.props.decrement()}>-</Button>
       <Button type="danger" onClick={() => this.props.reset()}>reset</Button> */}
+      <div className="home-content">
       <RoomList roomList={this.overLook.roomList} title={this.overLook.title} subTitle={this.overLook.subTitle} moreInfo={this.overLook.moreInfo}/>
       <RoomList roomList={this.SummerTravel.roomList} title={this.SummerTravel.title} subTitle={this.SummerTravel.subTitle}  moreInfo={this.SummerTravel.moreInfo}/>
+
+      </div>
+      
       </div>
     );
   }

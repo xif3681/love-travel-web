@@ -5,7 +5,7 @@ import { DispatchFunction } from '@/tsTypes'
 import { Card, Col, Row } from 'antd';
 import * as MenusActions from "../store/actions"
 import { StoreState } from 'src/redux/rootReducer'
-import 'src/components/style.scss'
+import './roomList.scss'
 const { Meta } = Card;
 
 interface RoomInfoList {

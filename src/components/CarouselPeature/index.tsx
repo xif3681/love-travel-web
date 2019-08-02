@@ -5,7 +5,7 @@ import { Carousel } from 'antd';
 import * as MenusActions from "../store/actions"
 import { StoreState } from 'src/redux/rootReducer'
 import Menus from 'src/components/Menus'
-import 'src/components/style.scss'
+import './carouselPeature.scss'
 
 
 interface PictureList {

@@ -4,7 +4,7 @@ import { DispatchFunction } from '@/tsTypes'
 import {  Menu, Icon } from 'antd';
 import * as MenusActions from "../store/actions"
 import { StoreState } from 'src/redux/rootReducer'
-import 'src/components/style.scss'
+import './menus.scss'
 const { SubMenu } = Menu;
 
 interface StateProps {

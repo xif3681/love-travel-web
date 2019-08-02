@@ -1,31 +1,6 @@
-/* For demo */
-// CarouselPeature
-.CarouselPeature {
-  .ant-carousel .slick-slide {
-    text-align: center;
-    height: 529px;
-    line-height: 529px;
-    background: #364d79;
-    overflow: hidden;
-  }
-  
-  .ant-carousel .slick-slide h3 {
-    color: #fff;
-  }
-  .peature{
-    width: 100%;
-    height: 100%;
-    opacity: 0.7;
-  }
-  .position-re {
-    position: relative
-  
-  }
-
-}
-
 //RoomList
 .RoomList {
+
   @media (max-width: 744px) {
     .ant-card-meta-title {
       font-weight: bold !important;
@@ -92,36 +67,3 @@
     padding-bottom: 2px !important;
   }
 }
-
-// Menus
-.Menus {
-  .position-ab {
-    position: absolute;
-    right: 0;
-    z-index: 100;
-  }
-  .ant-menu {
-    background: rgba(0, 0, 0, 0);
-    color:#fafafa;
-  
-  }
-  .ant-menu-item-group-list {
-    color: rgba(0, 0, 0, 0.65)
-  }
-  .ant-menu-horizontal {
-    border-bottom: 0px;
-  }
-  .ant-menu-item-group-title{
-    color: rgb(136, 136, 136)
-  }
-}
-
-// Footer
-.Footer{
-  .foot-text {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-    
-}
-

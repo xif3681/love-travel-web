@@ -1,0 +1,16 @@
+@media (min-width: 1128px){
+  .Home {
+    .home-content {
+      margin-bottom: 0px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      position: relative !important;
+    }
+  }
+}
+.Home {
+  .home-content {
+    max-width: 1080px !important;
+    // margin-top: -96px !important;
+  }
+}

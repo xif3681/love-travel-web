@@ -4,7 +4,7 @@ import { DispatchFunction } from '@/tsTypes'
 import * as FooterActions from "../store/actions"
 import { StoreState } from 'src/redux/rootReducer'
 import {FooterList} from '@/interface/common/footer';
-import 'src/components/style.scss'
+import './footer.scss'
 
 interface StateProps {
   footerList: FooterList
