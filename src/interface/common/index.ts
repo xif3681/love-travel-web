@@ -1,7 +1,9 @@
 import {MenusCurrent} from './menus';
 import {FooterList} from './footer';
+import {RoomInfo} from './roomInfo';
 
 export interface Common {
   menusCurrent: MenusCurrent,
-  footerList: FooterList
+  footerList: FooterList,
+  roomInfo: RoomInfo
 }

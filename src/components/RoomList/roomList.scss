@@ -66,4 +66,27 @@
     padding-top: 2px !important;
     padding-bottom: 2px !important;
   }
+  .text-left {
+    text-align: left
+  }
+  .metadata{
+    overflow-x: hidden;
+    /* word-break: normal; */
+    white-space: nowrap;
+    position: relative;
+    .button-left, .button-right{
+      position: absolute;
+      z-index: 1;
+      top: 40px;
+      margin: 0 !important;
+    }
+    .button-left {
+      left: 0;
+    }
+    .button-right {
+      right: 0;
+    }
+
+  }
+  
 }

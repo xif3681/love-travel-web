@@ -52,7 +52,7 @@ class CarouselPeature extends Component<StateProps & DispatchProps & OwnProps, O
       <div className="CarouselPeature">
       < div className="position-re">
         <Menus />
-        <Carousel autoplay speed={1000}>
+        <Carousel autoplay speed={1000} >
           {this.props.pictureList.map((item, index) => {
             return (
               <div key={index}>

@@ -6,7 +6,8 @@ import { StoreState } from 'src/redux/rootReducer'
 import CarouselPeature from 'src/components/CarouselPeature';
 import RoomList from 'src/components/RoomList';
 import './home.scss'
-
+import { Input } from 'antd';
+const { Search } = Input;
 
 
 interface StateProps {
@@ -55,13 +56,16 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
     { src: require('src/assets/images/仙人掌系列.jpeg') },
   ];
   public overLook = {
+    result_type: 'over-look',
+    id: '10001',
     title: '最近浏览过的',
+    metadata: [],
     subTitle: '',
     moreInfo: {
       name: '',
       link: ''
     },
-    roomList: [
+    room_list: [
       {
         type: '整套公寓',
         bedNum: 2,
@@ -95,13 +99,27 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
     ]
   }
   SummerTravel = {
+    result_type: 'summer-travel',
+    id: '10002',
+    metadata: [
+      {id: '20001', name: '北京', parent_type: 'summer-travel'},
+      {id: '20002', name: '上海', parent_type: 'summer-travel'},
+      {id: '20003', name: '天津', parent_type: 'summer-travel'},
+      {id: '20004', name: '深圳', parent_type: 'summer-travel'},
+      {id: '20005', name: '广州', parent_type: 'summer-travel'},
+      {id: '20006', name: '厦门', parent_type: 'summer-travel'},
+      {id: '20007', name: '成都', parent_type: 'summer-travel'},
+      {id: '20008', name: '重庆', parent_type: 'summer-travel'},
+      {id: '20009', name: '西藏', parent_type: 'summer-travel'},
+      {id: '20010', name: '山东', parent_type: 'summer-travel'},
+    ],
     title: '夏日出行精选',
-    subTitle: '',
+    subTitle: '低至 7 折，可叠加使用礼券',
     moreInfo: {
       name: '查看更多巴黎迪士尼乐园房源',
       link: '/host'
     },
-    roomList: [
+    room_list: [
       {
         type: '整套公寓',
         bedNum: 2,
@@ -186,8 +204,9 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
       <Button type="primary" onClick={() => this.props.decrement()}>-</Button>
       <Button type="danger" onClick={() => this.props.reset()}>reset</Button> */}
       <div className="home-content">
-      <RoomList roomList={this.overLook.roomList} title={this.overLook.title} subTitle={this.overLook.subTitle} moreInfo={this.overLook.moreInfo}/>
-      <RoomList roomList={this.SummerTravel.roomList} title={this.SummerTravel.title} subTitle={this.SummerTravel.subTitle}  moreInfo={this.SummerTravel.moreInfo}/>
+      <Search placeholder="input search text"   size="large" onSearch={value => console.log(value)} enterButton />
+      <RoomList roomInfo={this.overLook} />
+      <RoomList roomInfo={this.SummerTravel} />
 
       </div>
       
