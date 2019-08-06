@@ -17,6 +17,7 @@ interface MetadataListInterface {
   parent_type: string
 }
 export interface RoomInfo {
+  colunm: number,
   result_type: string,
   id: string,
   metadata: Array<MetadataListInterface>,

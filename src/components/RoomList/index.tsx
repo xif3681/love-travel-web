@@ -54,37 +54,44 @@ class RoomList extends Component<StateProps & DispatchProps & OwnProps, OwnState
 
         <div>
           {this.props.roomInfo.metadata && this.props.roomInfo.metadata.length === 0 &&
-          <Row gutter={16} >
-            {this.props.roomInfo.room_list.map((item, index) => {
-              return (
-                <Col xs={12} sm={12} md={12} lg={8} xl={8} key={index}>
-                  <Card
-                    hoverable
+            <Row gutter={16} >
+              {this.props.roomInfo.room_list.map((item, index) => {
+                return (
+                  <Col xs={12} sm={12} md={12} lg={24 / this.props.roomInfo.colunm} xl={24 / this.props.roomInfo.colunm} key={index}>
+                    <Card
+                      hoverable
 
-                    cover={<img alt="example" src={item.image} />}
-                  >
-                    <Meta title={`${item.type}·${item.bedNum}张床`} description={item.intro} />
-                  </Card>
-                </Col>
-              )
-            })}
-          </Row>
+                      cover={<img alt="example" src={item.image} />}
+                    >
+                      <Meta title={`${item.type}·${item.bedNum}张床`}  />
+                      <div className="_1revvmz">
+                        <div className="_qhtkbey">{item.intro}</div>
+                      </div>
+                    </Card>
+                  </Col>
+                )
+              })}
+            </Row>
           }
           {this.props.roomInfo.metadata && this.props.roomInfo.metadata.length > 0 &&
-            <Tabs defaultActiveKey="20001" tabPosition="top"  size="large" onChange={this.props.handleTabChange}>
+            <Tabs defaultActiveKey="20001" tabPosition="top" size="large" onChange={this.props.handleTabChange}>
               {this.props.roomInfo.metadata && this.props.roomInfo.metadata.map((item, index) => (
                 <TabPane tab={item.name} key={item.id}>
                   {item.name} | {item.id}
                   <Row gutter={16} >
                     {this.props.roomInfo.room_list.map((item, index) => {
                       return (
-                        <Col xs={12} sm={12} md={12} lg={8} xl={8} key={index}>
+                        <Col xs={12} sm={12} md={12} lg={24 / this.props.roomInfo.colunm} xl={24 / this.props.roomInfo.colunm} key={index}>
                           <Card
                             hoverable
 
                             cover={<img alt="example" src={item.image} />}
                           >
-                            <Meta title={`${item.type}·${item.bedNum}张床`} description={item.intro} />
+                            <Meta title={`${item.type}·${item.bedNum}张床`} />
+                            <div className="_1revvmz">
+                              <div className="_qhtkbey">{item.intro}</div>
+                            </div>
+
                           </Card>
                         </Col>
                       )
@@ -101,7 +108,7 @@ class RoomList extends Component<StateProps & DispatchProps & OwnProps, OwnState
         <div className="more-info">
           {this.props.roomInfo.moreInfo.link &&
             <NavLink to={this.props.roomInfo.moreInfo.link}>
-              <span >{this.props.roomInfo.moreInfo.name}》</span>
+              <span >{this.props.roomInfo.moreInfo.name}></span>
 
             </NavLink>
 

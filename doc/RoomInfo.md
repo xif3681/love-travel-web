@@ -21,6 +21,7 @@
 >  parent_type: string
 >}
 >export interface RoomInfo {
+>  colunm: number,
 >  result_type: string,
 >  id: string,
 >  metadata: Array<MetadataListInterface>,
@@ -34,6 +35,7 @@
 }
 ```json
     {
+      "colunm": 4,
       "result_type": "over-look",
       "id": "10001",
       "title": "最近浏览过的",
