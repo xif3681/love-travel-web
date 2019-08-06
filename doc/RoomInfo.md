@@ -2,7 +2,7 @@
 ```shell
  curl -XPOST "api/v1/room_listing_details/{id}"
 ```
-> id
+
 >interface RoomListInterface {
 >  id: string,
 >  type: string,
