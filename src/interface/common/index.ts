@@ -5,5 +5,5 @@ import {RoomInfo} from './roomInfo';
 export interface Common {
   menusCurrent: MenusCurrent,
   footerList: FooterList,
-  roomInfo: RoomInfo
+  roomInfo: Array<RoomInfo>
 }

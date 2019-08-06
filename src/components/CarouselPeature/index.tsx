@@ -6,11 +6,7 @@ import * as MenusActions from "../store/actions"
 import { StoreState } from 'src/redux/rootReducer'
 import Menus from 'src/components/Menus'
 import './carouselPeature.scss'
-
-
-interface PictureList {
-  src: string
-}
+import { RoomInfo } from 'src/interface/common/roomInfo';
 
 interface StateProps {
   current: string
@@ -21,7 +17,7 @@ interface DispatchProps {
 }
 
 interface OwnProps {
-  pictureList: Array<PictureList>
+  pictureList: RoomInfo 
 }
 
 interface OwnState {
@@ -53,10 +49,10 @@ class CarouselPeature extends Component<StateProps & DispatchProps & OwnProps, O
       < div className="position-re">
         <Menus />
         <Carousel autoplay speed={1000} >
-          {this.props.pictureList.map((item, index) => {
+          {this.props.pictureList.room_list.map((item, index) => {
             return (
               <div key={index}>
-                <img width={300} src={item.src} className="peature" />
+                <img width={300} src={item.image} className="peature" />
               </div>
 
             )

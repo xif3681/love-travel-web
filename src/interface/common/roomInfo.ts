@@ -1,5 +1,6 @@
 
 interface RoomListInterface {
+  id: string,
   type: string,
   bedNum: number,
   intro: string,
@@ -18,7 +19,7 @@ interface MetadataListInterface {
 export interface RoomInfo {
   result_type: string,
   id: string,
-  metadata?: Array<MetadataListInterface>,
+  metadata: Array<MetadataListInterface>,
   room_list: Array<RoomListInterface>,
   title: string,
   subTitle: string,

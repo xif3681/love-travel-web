@@ -69,6 +69,25 @@
   .text-left {
     text-align: left
   }
+  ._14h8plu {
+    -webkit-transition: -webkit-transform 0.5s,transform 0.5s !important;
+    -moz-transition: transform 0.5s !important;
+    transition: -ms-transform 0.5s,-webkit-transform 0.5s,transform 0.5s !important;
+}
+._14h8plu.left {
+  transform: translate(0, -10px);
+  -webkit-transform: translate(0, -10px);
+  -moz-transform: translate(0, -10px);
+  -o-transform: translate(0, -10px);
+  -ms-transform: translate(0, -10px);
+}
+._14h8plu.right {
+  transform: translate(0, -10px);
+  -webkit-transform: translate(0, -10px);
+  -moz-transform: translate(0, -10px);
+  -o-transform: translate(0, -10px);
+  -ms-transform: translate(0, -10px);
+}
   .metadata{
     overflow-x: hidden;
     /* word-break: normal; */
