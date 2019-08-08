@@ -2,7 +2,7 @@ import { Dispatch } from "redux"
 import { createAction } from "redux-actions"
 
 import { host } from '@/services/hostConfig'
-import * as Service from '@/services/auth'
+import * as Service from 'src/services/authBI'
 
 import { setCookie } from '@/utils/cookie'
 

@@ -1,4 +1,4 @@
-import Request from './request'
+import Request from './requestBI'
 import { PageEnum, UserInfo } from 'src/interface/user'
 
 // 通用登陆接口

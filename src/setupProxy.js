@@ -1,21 +1,21 @@
 const proxy = require('http-proxy-middleware');
 
 module.exports = function(app) {
-  app.use(proxy('/api', { target: 'http://localhost:5000/' }));
+  // app.use(proxy('/api', { target: 'http://127.0.0.1:7001/' }));
   app.use(proxy('/api', { 
-    target: 'http://172.19.5.35:9536',
+    target: 'http://127.0.0.1:7001',
     secure: false,
     changeOrigin: true,
     pathRewrite: {
      "^/api": "/"
     },
    }));
-   app.use(proxy('/apc', { 
-    target: 'http://172.19.5.34:9531',
+   app.use(proxy('/order', { 
+    target: 'http://118.89.18.229:10008',
     secure: false,
     changeOrigin: true,
     pathRewrite: {
-     "^/apc": "/"
+     "^/order": "/"
     },
    }));
 };

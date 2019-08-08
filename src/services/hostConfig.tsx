@@ -1,8 +1,9 @@
 const productionHost = 'api/v1'
-const testHost = 'http://localhost:3000/'
+// const testHost = 'http://127.0.0.1:7001/'
+const testHost = '/api'
 
 const uploadProductionHost = 'api/v1'
-const uploadTestHost = 'http://localhost:3000/'
+const bookWebHost = '/order'
 
 export const host =  process.env.NODE_ENV === 'production' ? productionHost: testHost;
-export const uploadHost = process.env.NODE_ENV === 'production' ? uploadProductionHost: uploadTestHost;
+export const bookWeb = process.env.NODE_ENV === 'production' ? uploadProductionHost: bookWebHost;

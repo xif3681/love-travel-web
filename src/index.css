@@ -12,3 +12,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#global-loading {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 112px;
+  height: 40px;
+  margin-left: -56px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  z-index: 99999;
+  transition-delay: 0.1s;
+  opacity: 0;
+}
+
+#global-loading>.loading-circle {
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  border: 2px solid;
+  border-radius: 50%;
+  border-color: #03B485 #03B485 transparent transparent;
+  animation: ring 1s linear infinite;
+}
+
