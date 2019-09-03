@@ -14,7 +14,7 @@ const configureStore = (preloadedState: object) => {
 
   const composedEnhancers = composeWithDevTools(middlewaresEnhancer, monitorReducersEnhancer as StoreCreator, resetStoreEnhacer as StoreCreator);
 
-  const store: StoreInterface = createStore(combineReducers(rootReducer), preloadedState, composedEnhancers);
+  const store: StoreInterface = createStore(rootReducer, preloadedState, composedEnhancers);
   store._reducer = rootReducer;
 
   if (module.hot) {

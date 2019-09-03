@@ -6,7 +6,7 @@ import * as Service from 'src/services/authBI'
 
 import { setCookie } from '@/utils/cookie'
 
-import { CommonActions } from "./actionTypes"
+import { UserActionTypes } from "@/constants/actionTypes"
 import { UserInfo } from "src/interface/user"
 import { GlobalState } from "@/interface/state"
 
@@ -15,15 +15,15 @@ import { GlobalState } from "@/interface/state"
  * @param params 使用票据鉴权
  */
 export const pagodaLogin = (params: { ticket: string }) => async (dispatch: Dispatch) => {
-  dispatch(createAction(CommonActions.COMMON_USER_TOKEN_START)())
+  dispatch(createAction(UserActionTypes.USER_TOKEN_START)())
   return Service.pagodaLogin(params)
   .then(res => {
     setCookie('quickbi_token', res.token)
-    dispatch(createAction(CommonActions.COMMON_USER_TOKEN_SUCCESS)(res))
+    dispatch(createAction(UserActionTypes.USER_TOKEN_SUCCESS)(res))
     return res.token
   })
   .catch(e => {
-    dispatch(createAction(CommonActions.COMMON_USER_TOKEN_FAIL)())
+    dispatch(createAction(UserActionTypes.USER_TOKEN_FAIL)())
   })
 }
 
@@ -33,15 +33,15 @@ export const pagodaLogin = (params: { ticket: string }) => async (dispatch: Disp
  * @param password 
  */
 export const login = (username: string, password: string) => async (dispatch: Dispatch) => {
-  dispatch(createAction(CommonActions.COMMON_USER_TOKEN_START)())
+  dispatch(createAction(UserActionTypes.USER_TOKEN_START)())
   return Service.login(username, password)
   .then(({ token }) => {
     setCookie('quickbi_token', token)
-    dispatch(createAction(CommonActions.COMMON_USER_TOKEN_SUCCESS)(token))
+    dispatch(createAction(UserActionTypes.USER_TOKEN_SUCCESS)(token))
     return token
   })
   .catch(e => {
-    dispatch(createAction(CommonActions.COMMON_USER_TOKEN_FAIL)())
+    dispatch(createAction(UserActionTypes.USER_TOKEN_FAIL)())
   })
 }
 
@@ -50,7 +50,7 @@ export const login = (username: string, password: string) => async (dispatch: Di
  */
 export const loadUserCurrent = () => async (dispatch: Dispatch): Promise<UserInfo> => {
   const user = await Service.loadUserCurrent()
-  dispatch(createAction(CommonActions.COMMON_USER_CURRENT)(user))
+  dispatch(createAction(UserActionTypes.USER_CURRENT)(user))
   return user
 }
 
@@ -58,16 +58,16 @@ export const loadUserCurrent = () => async (dispatch: Dispatch): Promise<UserInf
  * 混合接口
  */
 export const loadUserInfoMixedAccess = () => async (dispatch: Dispatch) => {
-  dispatch(createAction(CommonActions.COMMON_USER_PRIVILIGE_PENDING)())
+  dispatch(createAction(UserActionTypes.USER_PRIVILIGE_PENDING)())
   // 测试
   return Service.loadUserInfoMixedAccess()
   .then(({ current, permissions }) => {
-    dispatch(createAction(CommonActions.COMMON_USER_PRIVILIGE_SUCCESS)(permissions))
-    dispatch(createAction(CommonActions.COMMON_USER_CURRENT)(current))
+    dispatch(createAction(UserActionTypes.USER_PRIVILIGE_SUCCESS)(permissions))
+    dispatch(createAction(UserActionTypes.USER_CURRENT)(current))
   })
   .catch((e) => {
-    dispatch(createAction(CommonActions.COMMON_USER_PRIVILIGE_FAIL)())
-    dispatch(createAction(CommonActions.COMMON_USER_CURRENT)())
+    dispatch(createAction(UserActionTypes.USER_PRIVILIGE_FAIL)())
+    dispatch(createAction(UserActionTypes.USER_CURRENT)())
   })
 }
 

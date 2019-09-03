@@ -1,18 +1,13 @@
-import { combineReducers } from "redux"
-import { handleActions } from "redux-actions"
-import { ActionTypes} from "./actionTypes"
 
-import  {Common}  from "@/interface/common"
+import { CommmonActionTypes} from "@/constants/actionTypes"
 
+import { Map } from 'immutable'
 
-export const initReducer: Common = {
-  menusCurrent: {
-    current: 'home'
-  },
-  footerList: [{
-    name: 'a'
-  }],
-  roomInfo : [
+import { Action } from "redux-actions"
+
+const roomInfo = {
+  status: 200,
+  data:[
     {
       "colunm": 3,
       "result_type": 'over-look',
@@ -198,7 +193,7 @@ export const initReducer: Common = {
           assessNum: 2,
           image: require('src/assets/images/小夜人系列.jpeg')
         },
-
+  
       ]
     },
     {
@@ -314,42 +309,22 @@ export const initReducer: Common = {
           assessNum: 2,
           image: require('src/assets/images/小夜人系列.jpeg')
         },
-
+  
       ]
     }
   ]
+  
 }
 
-const menusCurrent = handleActions({
-  [ActionTypes.MENUSCURRENT]: (state: any, { payload }) => {
-    return {
-      current: payload.key
-    }
+export default (state=Map(roomInfo), { type, payload }: Action<any>) => {
+  switch (type) {
+      case CommmonActionTypes.ROOMINFO:
+          return state
+          // state.merge({
+          //   status: payload.status,
+          //   data:  payload.data
+          // })
+      default:
+          return state
   }
-}, initReducer.menusCurrent)
-const footerList = handleActions({
-  [ActionTypes.FOOTERLIST]: (state: any, { payload }) => {
-    console.log(payload)
-    return {
-      ...state,
-      footerList: payload.key
-    }
-  }
-}, initReducer.footerList)
-const roomInfo = handleActions({
-  [ActionTypes.ROOMINFO]: (state: any, { payload }) => {
-    console.log('ROOMINFO')
-    console.log(payload)
-    console.log(state)
-    return [ ...state]
-    
-  }
-}, initReducer.roomInfo)
-
-
-export default combineReducers({
-  menusCurrent,
-  footerList,
-  roomInfo
-
-})
+}

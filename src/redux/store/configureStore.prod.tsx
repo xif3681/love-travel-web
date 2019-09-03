@@ -10,7 +10,7 @@ const configureStore = (preloadedState: object) => {
   const middlewaresEnhancer = applyMiddleware(thunkMiddleware);
   const composedEnhancers = compose(middlewaresEnhancer, resetStoreEnhacer);
 
-  const store: any = createStore(combineReducers(rootReducer), preloadedState, composedEnhancers as StoreCreator);
+  const store: any = createStore(rootReducer, preloadedState, composedEnhancers as StoreCreator);
   store._reducer = rootReducer;
 
   return store;

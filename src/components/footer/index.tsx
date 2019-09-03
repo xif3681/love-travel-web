@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { MapStateToPropsParam, MapDispatchToPropsParam, connect } from 'react-redux';
 import { DispatchFunction } from '@/tsTypes'
-import * as FooterActions from "../store/actions"
-import { StoreState } from 'src/redux/rootReducer'
-import {FooterList} from '@/interface/common/footer';
+import * as FooterActions from "@/actions/common"
+import { ReduxStore } from 'src/redux/rootReducer'
 import './footer.scss'
 
 interface StateProps {
-  footerList: FooterList
+
 }
 
 interface DispatchProps {
@@ -21,9 +20,8 @@ interface OwnProps {
 interface OwnState {
 }
 
-const mapStateToProps: MapStateToPropsParam<StateProps, OwnProps, StoreState> = (state) => {
+const mapStateToProps: MapStateToPropsParam<StateProps, OwnProps, ReduxStore> = (state) => {
   return {
-    footerList: state.common.footerList
   }
 }
 
@@ -36,7 +34,6 @@ const mapDispatchToProps: MapDispatchToPropsParam<DispatchProps, OwnProps> = (di
 class Footer extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
   constructor(props: StateProps & DispatchProps & OwnProps) {
     super(props)
-    // this._bootstrapAsync()
   }
   render() {
     return (

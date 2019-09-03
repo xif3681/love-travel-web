@@ -10,12 +10,4 @@ module.exports = function(app) {
      "^/api": "/"
     },
    }));
-   app.use(proxy('/order', { 
-    target: 'http://118.89.18.229:10008',
-    secure: false,
-    changeOrigin: true,
-    pathRewrite: {
-     "^/order": "/"
-    },
-   }));
 };

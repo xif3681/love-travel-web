@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import { MapStateToPropsParam, MapDispatchToPropsParam, connect } from 'react-redux';
 import { DispatchFunction } from '@/tsTypes'
 import { Carousel } from 'antd';
-import * as MenusActions from "../store/actions"
-import { StoreState } from 'src/redux/rootReducer'
+import * as MenusActions from "@/actions/common"
+import { ReduxStore } from 'src/redux/rootReducer'
 import Menus from 'src/components/Menus'
 import './carouselPeature.scss'
-import { RoomInfo } from 'src/interface/common/roomInfo';
+import { RoomInfoInterface } from 'src/interface/common';
 
 interface StateProps {
-  current: string
+  // current: string
 }
 
 interface DispatchProps {
@@ -17,15 +17,15 @@ interface DispatchProps {
 }
 
 interface OwnProps {
-  pictureList: RoomInfo 
+  pictureList: RoomInfoInterface 
 }
 
 interface OwnState {
 }
 
-const mapStateToProps: MapStateToPropsParam<StateProps, OwnProps, StoreState> = (state) => {
+const mapStateToProps: MapStateToPropsParam<StateProps, OwnProps, ReduxStore> = (state) => {
   return {
-    current: state.common.menusCurrent.current
+    // current: state.menusCurrent.current
   }
 }
 

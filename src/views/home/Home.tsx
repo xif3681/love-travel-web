@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import { MapStateToPropsParam, MapDispatchToPropsParam, connect } from 'react-redux';
 import { DispatchFunction } from '@/tsTypes'
-import * as HomeActions from "./store/actions"
-import { StoreState } from 'src/redux/rootReducer'
+import * as HomeActions from "src/actions/tabs"
+import { ReduxStore } from 'src/redux/rootReducer'
 import CarouselPeature from 'src/components/CarouselPeature';
 import RoomList from 'src/components/RoomList';
+
 import './home.scss'
-import { Input } from 'antd';
-import { RoomInfo } from 'src/interface/common/roomInfo';
+import { Input, Button } from 'antd';
+import { RoomInfoInterface } from 'src/interface/common';
 const { Search } = Input;
 
 
 interface StateProps {
   count: Number,
-  state: Object,
-  roomInfo: Array<RoomInfo>
+  roomInfo: Array<RoomInfoInterface>
 }
 
 interface DispatchProps {
@@ -30,11 +30,10 @@ interface OwnProps {
 interface OwnState {
 }
 
-const mapStateToProps: MapStateToPropsParam<StateProps, OwnProps, StoreState> = (state) => {
+const mapStateToProps: MapStateToPropsParam<StateProps, OwnProps, ReduxStore> = (state) => {
   return {
-    count: state.home.tabs.count,
-    state: state,
-    roomInfo: state.common.roomInfo
+    count: state.get('tabs').get('count'),
+    roomInfo: state.get('roomInfo').get('data')
   }
 }
 
@@ -71,13 +70,16 @@ class Home extends Component<StateProps & DispatchProps & OwnProps, OwnState> {
 
 
   render() {
-    const roomInfo: RoomInfo  = this.props.roomInfo[0]
-    // this.props.roomInfo.shift
+    const roomInfo: RoomInfoInterface  = this.props.roomInfo[0]
+    // this.props.roomInfo.shift()
     return (
       <div className="Home">
         <CarouselPeature pictureList={roomInfo}></CarouselPeature>
         <div className="home-content">
           <Search placeholder="input search text" size="large" onSearch={value => console.log(value)} enterButton />
+          <Button onClick={this.props.increment}>+</Button>
+          <Button onClick={this.props.decrement}>-</Button>
+          <div>{this.props.count}</div>
           {this.props.roomInfo.map((item , index) => {
             if( index === 0) return
             else {

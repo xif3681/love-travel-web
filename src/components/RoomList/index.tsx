@@ -4,16 +4,16 @@ import { NavLink } from 'react-router-dom'
 import { DispatchFunction } from '@/tsTypes'
 import { Card, Col, Row, Radio, Button, Icon, Tabs } from 'antd';
 
-import * as MenusActions from "../store/actions"
-import { StoreState } from 'src/redux/rootReducer'
-import { RoomInfo } from 'src/interface/common/roomInfo';
+import * as MenusActions from "@/actions/common"
+import { ReduxStore } from 'src/redux/rootReducer'
+import { RoomInfoInterface } from 'src/interface/common';
 import './roomList.scss'
 
 const { Meta } = Card;
 const { TabPane } = Tabs;
 
 interface StateProps {
-  current: string
+  // current: string
 }
 
 interface DispatchProps {
@@ -21,15 +21,15 @@ interface DispatchProps {
 }
 
 interface OwnProps {
-  roomInfo: RoomInfo,
+  roomInfo: RoomInfoInterface,
 }
 
 interface OwnState {
 }
 
-const mapStateToProps: MapStateToPropsParam<StateProps, OwnProps, StoreState> = (state) => {
+const mapStateToProps: MapStateToPropsParam<StateProps, OwnProps, ReduxStore> = (state) => {
   return {
-    current: state.common.menusCurrent.current
+   
   }
 }
 

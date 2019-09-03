@@ -1,17 +1,17 @@
 import { Dispatch } from "redux"
 import { createAction } from "redux-actions"
-import { ActionTypes } from "./actionTypes"
+import { HomeActionTypes } from "../constants/actionTypes"
 
 
 export const increment = () => (dispatch: Dispatch) => {
-  dispatch(createAction(ActionTypes.INCREMENT)({num: 2}))
+  dispatch(createAction(HomeActionTypes.INCREMENT)({num: 2}))
 }
 export const decrement = () => (dispatch: Dispatch) => {
-  dispatch(createAction(ActionTypes.DECREMENT)())
+  dispatch(createAction(HomeActionTypes.DECREMENT)())
 }
 export const reset = () => (dispatch: Dispatch) => {
-  dispatch(createAction(ActionTypes.RESET)())
+  dispatch(createAction(HomeActionTypes.RESET)())
 }
 export const handleClick = (e: any) => (dispatch: Dispatch) => {
-  dispatch(createAction(ActionTypes.TABCURRENT)(e))
+  dispatch(createAction(HomeActionTypes.TABCURRENT)(e))
 }
